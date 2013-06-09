@@ -25,6 +25,7 @@ package
 	import tests.Rectangles_Test;
 	import tests.Signals_Test;
 	import tests.Singleton_VS_Static_Test;
+	import tests.String_Test;
 	import tests.TrigonometryTest;
 	import tests.XMLTest;
 
@@ -52,7 +53,8 @@ package
 
 
 			// tests
-			addTest(new ASC2_Test());
+			addTest(new String_Test());
+//			addTest(new ASC2_Test());
 //			addTest(new XMLTest());
 //			addTest(new TrigonometryTest());
 //			addTest(new Draw_Test());
