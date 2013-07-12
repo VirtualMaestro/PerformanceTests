@@ -21,7 +21,9 @@ package
 	import tests.LogicBitwise_Test;
 	import tests.Matrix_Test;
 	import tests.Numbers_Test;
+	import tests.PerlinNoise_Test;
 	import tests.QueryShapeBodiesInCircle_Test;
+	import tests.Random_Test;
 	import tests.Rectangles_Test;
 	import tests.Signals_Test;
 	import tests.Singleton_VS_Static_Test;
@@ -53,7 +55,9 @@ package
 
 
 			// tests
-			addTest(new String_Test());
+			addTest(new Random_Test());
+//			addTest(new PerlinNoise_Test());
+//			addTest(new String_Test());
 //			addTest(new ASC2_Test());
 //			addTest(new XMLTest());
 //			addTest(new TrigonometryTest());
