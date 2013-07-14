@@ -38,7 +38,7 @@ package tests
 		 *  - RandUtil.getFloatUnsign(): MXMLC 270 ms, ASC2: 270/280 ms (10 000 000)
 		 *  - RandUtil.getFloatRange(): MXMLC 730 ms, ASC2: 700/750 ms (10 000 000)
 		 *
-		 * Gaussian random: 1600 ms (10 000 000)
+		 * Gaussian random: 1080 ms (10 000 000)
 		 */
 		private function randTest():void
 		{
@@ -51,7 +51,7 @@ package tests
 //				result = RandUtil.getFloat();
 //				result = RandUtil.getFloatUnsign();
 //				result = RandUtil.getFloatRange(0, 1);
-				result = RandUtil.getFloatG();
+				result = RandUtil.getGaussian();
 			}
 
 			timeResult = getTimer() - time;
