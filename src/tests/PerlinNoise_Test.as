@@ -7,10 +7,10 @@ package tests
 {
 	import flash.utils.getTimer;
 
-	import vm.math.rand.Perlin;
+	import vm.math.rand.Noise;
 
 	/**
-	 * Test of custom perlin noise.
+	 * Test of custom perlin noise3d.
 	 */
 	public class PerlinNoise_Test extends Test
 	{
@@ -30,7 +30,7 @@ package tests
 
 		/**
 		 * OptimizedPerlin: 208 ms, ASC2: 122 ms (100000 iterations)
-		 * My Perlin:        121 ms, ASC2: 95 ms (100000 iterations)
+		 * My Noise:        121 ms, ASC2: 95 ms (100000 iterations)
 		 */
 		private function perlinTest():void
 		{
@@ -38,7 +38,7 @@ package tests
 			var result2:Number;
 			var rand:Number = 1;
 
-			Perlin.init();
+			Noise.init();
 
 			var time:int = getTimer();
 
@@ -46,8 +46,8 @@ package tests
 			{
 //				rand = Math.random() * 100;
 
-//				result1 = OptimizedPerlin.noise(rand);
-				result2 = Perlin.noise(rand);
+//				result1 = OptimizedPerlin.noise3d(rand);
+				result2 = Noise.perlin3d(rand);
 			}
 
 			timeResult = getTimer() - time;
