@@ -7,6 +7,8 @@ package tests
 {
 	import flash.utils.getTimer;
 
+	import vm.stat.Stats;
+
 	/**
 	 */
 	public class String_Test extends Test
@@ -18,13 +20,17 @@ package tests
 			super(testName);
 
 			iterationsTest = 10000000;
+			var stat:Stats = new Stats();
+			stat.x = 200;
+			addChild(stat)
 		}
 
 		/**
 		 */
 		override public function run():void
 		{
-			castIntTest();
+//			castIntTest();
+			emptyStrVSnull();
 		}
 
 		/**
@@ -42,6 +48,27 @@ package tests
 			{
 				str = String(i);
 //				str = i+""
+			}
+
+			timeResult = getTimer() - time;
+		}
+
+		/**
+		 * Memory test. Creates empty string.
+		 * - empty - 100 ms
+		 * - null -  100 ms
+		 */
+		private function emptyStrVSnull():void
+		{
+			testName = "emptyStrVSnull";
+
+			var str:String;
+			var time:int = getTimer();
+
+			for (var i:int = 0; i < iterationsTest; i++)
+			{
+				str = null;
+//				str = "";
 			}
 
 			timeResult = getTimer() - time;

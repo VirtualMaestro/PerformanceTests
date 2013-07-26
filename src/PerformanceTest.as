@@ -55,9 +55,9 @@ package
 
 
 			// tests
-			addTest(new Random_Test());
+//			addTest(new Random_Test());
 //			addTest(new PerlinNoise_Test());
-//			addTest(new String_Test());
+			addTest(new String_Test());
 //			addTest(new ASC2_Test());
 //			addTest(new XMLTest());
 //			addTest(new TrigonometryTest());
