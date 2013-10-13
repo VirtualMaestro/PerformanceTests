@@ -26,7 +26,7 @@ package tests
 		}
 
 		/**
-		 * 137 ms - 10 000 000 iterations
+		 * 120 ms - 10 000 000 iterations
 		 */
 		private function cosTest():void
 		{

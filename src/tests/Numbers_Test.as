@@ -34,8 +34,8 @@ package tests
 //			roundTest();
 //			absTest();
 //			divMod();
-//			minMaxTest();
-			floorTest();
+			minMaxTest();
+//			floorTest();
 		}
 
 		/**
@@ -59,8 +59,9 @@ package tests
 		}
 
 		/**
-		 * Standard Math.min: 283 ms (10000000)
-		 * Own NumberUtil.min: 246 ms (10000000)
+		 * Standard Math.min: 256 ms (10 000 000)
+		 * Own NumberUtil.min: 217 ms (10 000 000)
+		 * Local min: 211  ms (10 000 000)
 		 */
 		private function minMaxTest():void
 		{
@@ -72,10 +73,17 @@ package tests
 			for (var i:int = 0; i < iterationsTest; i++)
 			{
 //				Math.min(testValue1, testValue2);
-				NumberUtil.min(testValue1, testValue2);
+//				NumberUtil.min(testValue1, testValue2);
+				min(testValue1, testValue2);
 			}
 
 			timeResult = getTimer() - time;
+		}
+
+		private function min(p_val1:Number, p_val2:Number):Number
+		{
+			if (p_val1 < p_val2) return p_val1;
+			return p_val2;
 		}
 
 		/**
@@ -98,7 +106,7 @@ package tests
 		}
 
 		/**
-		 * Standard abs: 115 ms (10000000)
+		 * Built-in abs: 115 ms (10000000)
 		 * Own abs:      220 ms (10000000)
 		 */
 		private function absTest():void

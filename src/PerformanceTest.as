@@ -1,35 +1,12 @@
 package
 {
 
-	import com.sociodox.theminer.TheMiner;
-
 	import flash.display.Sprite;
 	import flash.events.TimerEvent;
-	import flash.system.System;
 	import flash.text.TextField;
 	import flash.utils.Timer;
 
-	import tests.ABS_Test;
-	import tests.ASC2_Test;
-	import tests.Array_Test;
-	import tests.CallMethods_Test;
-	import tests.Class_Test;
-	import tests.Dictionary_Test;
-	import tests.Draw_Test;
-	import tests.Intersect_Test;
-	import tests.Lists_Test;
-	import tests.LogicBitwise_Test;
-	import tests.Matrix_Test;
-	import tests.Numbers_Test;
-	import tests.PerlinNoise_Test;
-	import tests.QueryShapeBodiesInCircle_Test;
-	import tests.Random_Test;
-	import tests.Rectangles_Test;
-	import tests.Signals_Test;
-	import tests.Singleton_VS_Static_Test;
-	import tests.String_Test;
 	import tests.TrigonometryTest;
-	import tests.XMLTest;
 
 	import vm.debug.DebugUtil;
 
@@ -53,14 +30,13 @@ package
 		{
 //			addChild(new TheMiner());
 
-
 			// tests
 //			addTest(new Random_Test());
 //			addTest(new PerlinNoise_Test());
-			addTest(new String_Test());
+//			addTest(new String_Test());
 //			addTest(new ASC2_Test());
 //			addTest(new XMLTest());
-//			addTest(new TrigonometryTest());
+			addTest(new TrigonometryTest());
 //			addTest(new Draw_Test());
 //			addTest(new Rectangles_Test());
 //			addTest(new Numbers_Test());
@@ -121,7 +97,7 @@ package
 		{
 			_output.text = "Test name: " + _currentTest.testName + " \nTime: " + _currentTest.timeResult + " ms" +
 					"\nAverage time: " + _currentTest.averageTime + "\nIterations: " + _currentTest.iterationsTest + "\nCount of run: " + _currentTest.currentRepeatedCount +
-			"\nMemory: " + _currentTest.getMemoryStamp() + " kb";
+					"\nMemory: " + _currentTest.getMemoryStamp() + " kb";
 
 			var additionalFields:Array = _currentTest.getOutputFields();
 			var len:int = additionalFields.length;
@@ -132,7 +108,7 @@ package
 				for (var i:int = 0; i < len; i++)
 				{
 					field = additionalFields[i];
-					_output.appendText("\n"+field.name + ": " + field.value);
+					_output.appendText("\n" + field.name + ": " + field.value);
 				}
 			}
 		}

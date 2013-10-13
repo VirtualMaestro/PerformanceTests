@@ -3,29 +3,19 @@ package tests
 	import flash.events.KeyboardEvent;
 	import flash.events.MouseEvent;
 	import flash.geom.Point;
-	import flash.sampler.getSize;
 	import flash.ui.Keyboard;
 	import flash.utils.getTimer;
 
 	import nape.geom.Vec2;
-	import nape.geom.Vec2List;
 	import nape.geom.Vec3;
 	import nape.phys.Body;
-	import nape.phys.BodyType;
 	import nape.shape.Circle;
 	import nape.shape.Polygon;
-	import nape.shape.Shape;
 
 	import utils.TrigonometryNape;
 
-	import vm.classes.ClassUtil;
-
-	import vm.math.rand.RandUtil;
-
 	public class Intersect_Test extends Test
 	{
-		private var _rand:RandUtil = RandUtil.getInstance();
-
 		public function Intersect_Test()
 		{
 			super("");
@@ -67,8 +57,6 @@ package tests
 //
 //			return;
 
-
-
 			var result:Vec2 = new Vec2(2345, 2345);
 			result.dispose();
 			var result3:Vec3 = new Vec3();
@@ -76,7 +64,7 @@ package tests
 			var vertex:Vertex = new Vertex();
 			var point:Point = new Point();
 			var body:Body = new Body();
-			var vertices:Array = [Vec2.get(), Vec2.get(1,1), Vec2.get(2)];
+			var vertices:Array = [Vec2.get(), Vec2.get(1, 1), Vec2.get(2)];
 			var polygon:Polygon = new Polygon(Polygon.box(50, 50));
 			polygon.localVerts.clear();
 			polygon.worldVerts.clear();
@@ -94,8 +82,6 @@ package tests
 //			trace("Size vertices: " + getSize(vertices));
 //
 //			return;
-
-
 
 			memoryStamp();
 			var time:int = getTimer();
@@ -138,7 +124,6 @@ package tests
 //				polygon.localVerts.clear();
 //				polygon.worldVerts.clear();
 
-
 //				body = new Body(BodyType.DYNAMIC, new Vec2(100, 100));
 //				body.shapes.add(new Circle(50));
 
@@ -169,22 +154,22 @@ package tests
 			{
 				case Keyboard.LEFT:
 				{
-					shiftX-=shift;
+					shiftX -= shift;
 					break;
 				}
 				case Keyboard.RIGHT:
 				{
-					shiftX+=shift;
+					shiftX += shift;
 					break;
 				}
 				case Keyboard.UP:
 				{
-					shiftY-=shift;
+					shiftY -= shift;
 					break;
 				}
 				case Keyboard.DOWN:
 				{
-					shiftY+=shift;
+					shiftY += shift;
 					break;
 				}
 			}
@@ -201,7 +186,6 @@ package tests
 			// ray circle
 //			var interPoint:Vec2 = TrigonometryNape.intersectRayCircle(p1, p2, circlePos, radius);
 //			if (interPoint) drawCircle(interPoint, 5, 0x00ff00);
-
 
 			// line circle
 			if (intersectPoints != null)
@@ -255,9 +239,9 @@ package tests
 			var p1xSp3x:Number = p1x - p3x;
 			var p1ySp3y:Number = p1y - p3y;
 
-			var d:Number  = p1xSp2x*p4ySp3y - p1ySp2y*p4xSp3x;
-			var da:Number = p1xSp3x*p4ySp3y - p1ySp3y*p4xSp3x;
-			var db:Number = p1xSp2x*p1ySp3y - p1ySp2y*p1xSp3x;
+			var d:Number = p1xSp2x * p4ySp3y - p1ySp2y * p4xSp3x;
+			var da:Number = p1xSp3x * p4ySp3y - p1ySp3y * p4xSp3x;
+			var db:Number = p1xSp2x * p1ySp3y - p1ySp2y * p1xSp3x;
 
 			var ta:Number = da / d;
 			var tb:Number = db / d;
