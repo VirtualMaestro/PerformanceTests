@@ -6,8 +6,6 @@ package
 	import flash.text.TextField;
 	import flash.utils.Timer;
 
-	import tests.TrigonometryTest;
-
 	import vm.debug.DebugUtil;
 
 	/**
@@ -36,7 +34,7 @@ package
 //			addTest(new String_Test());
 //			addTest(new ASC2_Test());
 //			addTest(new XMLTest());
-			addTest(new TrigonometryTest());
+//			addTest(new TrigonometryTest());
 //			addTest(new Draw_Test());
 //			addTest(new Rectangles_Test());
 //			addTest(new Numbers_Test());
