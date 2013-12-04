@@ -15,7 +15,8 @@ package tests
 
 		public function Matrix_Test()
 		{
-			iterationsTest = 1000000;
+			iterationsTest = 1;
+//			iterationsTest = 1000000;
 
 			_matrix = new Matrix();
 		}
@@ -36,6 +37,7 @@ package tests
 			testName = "transformPointTest";
 
 			_matrix.identity();
+			_matrix.translate(100, 150);
 			_matrix.scale(0.3, 0.4);
 			_matrix.rotate(0.2);
 			_matrix.translate(10, 15);
@@ -69,7 +71,7 @@ package tests
 //				_matrix.translate(1,1);
 
 				//
-				_matrix.createBox(1,1,1,1,1);
+				_matrix.createBox(1, 1, 1, 1, 1);
 			}
 
 			timeResult = getTimer() - time;

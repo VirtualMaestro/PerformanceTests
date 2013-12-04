@@ -6,6 +6,8 @@ package
 	import flash.text.TextField;
 	import flash.utils.Timer;
 
+	import tests.Matrix_Test;
+
 	import vm.debug.DebugUtil;
 
 	/**
@@ -24,11 +26,28 @@ package
 		private var _currentTest:Test;
 		private var _output:TextField;
 
+		/**
+		 */
 		public function PerformanceTest()
 		{
+			EmbedResources.init();
+
 //			addChild(new TheMiner());
 
-			// tests
+			//
+			initTests();
+
+			//
+			initOutput();
+			initTimer();
+		}
+
+		/**
+		 */
+		private function initTests():void
+		{
+//			addTest(new MathTest());
+//			addTest(new Filters_Test());
 //			addTest(new Random_Test());
 //			addTest(new PerlinNoise_Test());
 //			addTest(new String_Test());
@@ -38,7 +57,7 @@ package
 //			addTest(new Draw_Test());
 //			addTest(new Rectangles_Test());
 //			addTest(new Numbers_Test());
-//			addTest(new Matrix_Test());
+			addTest(new Matrix_Test());
 //			addTest(new CallMethods_Test());
 //			addTest(new Class_Test());
 //			addTest(new Signals_Test());
@@ -50,11 +69,6 @@ package
 //			addTest(new Intersect_Test());
 //			addTest(new Lists_Test());
 //			addTest(new Singleton_VS_Static_Test());
-
-			//
-			initOutput();
-			initTimer();
-
 		}
 
 		private function initTimer():void

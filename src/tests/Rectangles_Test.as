@@ -5,6 +5,7 @@
  */
 package tests
 {
+	import flash.geom.Point;
 	import flash.geom.Rectangle;
 	import flash.utils.getTimer;
 
@@ -36,7 +37,10 @@ package tests
 		override public function run():void
 		{
 //			standardRectTest();
-			bbRectTest();
+//			bbRectTest();
+
+//			setterTest();
+			setterPointTest();
 		}
 
 		/**
@@ -81,6 +85,50 @@ package tests
 			{
 //				_bbRect_1.isIntersect(_bbRect_2);
 				_bbRect_1.isInside(_bbRect_2);
+			}
+
+			timeResult = getTimer() - time;
+		}
+
+		/**
+		 * setTo: 226 ms, 10 000 000 iterations
+		 * direct to props: 129 ms, 10 000 000 iterations
+		 */
+		private function setterTest():void
+		{
+			var rect:Rectangle = new Rectangle();
+			var time:int = getTimer();
+
+			for (var i:int = 0; i < iterationsTest; i++)
+			{
+				rect.setTo(3, 6, 189, 435);
+
+				//
+//				rect.x = 3;
+//				rect.y = 6;
+//				rect.width = 189;
+//				rect.height = 435;
+			}
+
+			timeResult = getTimer() - time;
+		}
+
+		/**
+		 * setTo: 203 ms, 10 000 000 iterations
+		 * direct to props: 124 ms, 10 000 000 iterations
+		 */
+		private function setterPointTest():void
+		{
+			var point:Point = new Point();
+			var time:int = getTimer();
+
+			for (var i:int = 0; i < iterationsTest; i++)
+			{
+//				point.setTo(3,6);
+
+				//
+				point.x = 3;
+				point.y = 6;
 			}
 
 			timeResult = getTimer() - time;
