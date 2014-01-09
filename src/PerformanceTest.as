@@ -6,7 +6,7 @@ package
 	import flash.text.TextField;
 	import flash.utils.Timer;
 
-	import tests.Matrix_Test;
+	import tests.Dictionary_Test;
 
 	import vm.debug.DebugUtil;
 
@@ -57,11 +57,11 @@ package
 //			addTest(new Draw_Test());
 //			addTest(new Rectangles_Test());
 //			addTest(new Numbers_Test());
-			addTest(new Matrix_Test());
+//			addTest(new Matrix_Test());
 //			addTest(new CallMethods_Test());
 //			addTest(new Class_Test());
 //			addTest(new Signals_Test());
-//			addTest(new Dictionary_Test());
+			addTest(new Dictionary_Test());
 //			addTest(new LogicBitwise_Test());
 //			addTest(new Array_Test());
 //			addTest(new QueryShapeBodiesInCircle_Test());
