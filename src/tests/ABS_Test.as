@@ -16,8 +16,9 @@ package tests
 
 		/**
 		 * Built-in:   115 ms,  iteration 10 000 000
-		 * Local abs:  234 ms,  iteration 10 000 000
-		 * Local abs1: 218 ms,  iteration 10 000 000
+		 * Local abs:  234 ms, inline 150, iteration 10 000 000
+		 * Local abs1: 218 ms, inline 120,  iteration 10 000 000
+		 * Local absT: 209 ms, inline 130,  iteration 10 000 000
 		 */
 		override public function run():void
 		{
@@ -26,24 +27,32 @@ package tests
 			var time:int = getTimer();
 			for (var i:int = 0; i < iterationsTest; i++)
 			{
-				Math.abs(value);
-//				absNum +=  NumberUtil.math.abs(5);
-//				abs(value);
+//				Math.abs(value);
+				abs(value);
 //				abs1(value);
+//				absT(value);
 			}
 
 			timeResult = getTimer() - time;
 		}
 
-		private function abs(val:Number):Number
+		[Inline]
+		final private function abs(val:Number):Number
 		{
 			return (val + (val >> 31)) ^ (val >> 31);
 		}
 
-		private function abs1(val:Number):Number
+		[Inline]
+		final private function abs1(val:Number):Number
 		{
 			if (val < 0) return -val;
 			return val;
+		}
+
+		[Inline]
+		final private function absT(p_val:Number):Number
+		{
+			return p_val < 0 ? -p_val : p_val;
 		}
 	}
 }

@@ -6,7 +6,7 @@ package
 	import flash.text.TextField;
 	import flash.utils.Timer;
 
-	import tests.Dictionary_Test;
+	import tests.ABS_Test;
 
 	import vm.debug.DebugUtil;
 
@@ -61,11 +61,11 @@ package
 //			addTest(new CallMethods_Test());
 //			addTest(new Class_Test());
 //			addTest(new Signals_Test());
-			addTest(new Dictionary_Test());
+//			addTest(new Dictionary_Test());
 //			addTest(new LogicBitwise_Test());
 //			addTest(new Array_Test());
 //			addTest(new QueryShapeBodiesInCircle_Test());
-//			addTest(new ABS_Test());
+			addTest(new ABS_Test());
 //			addTest(new Intersect_Test());
 //			addTest(new Lists_Test());
 //			addTest(new Singleton_VS_Static_Test());
